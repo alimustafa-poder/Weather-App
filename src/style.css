@@ -1,0 +1,138 @@
+body{
+    background-color: #00bcd4;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.hello{
+    color: red;
+}
+
+.weatherIcon{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.heading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper > .input{
+    display: flex;
+    align-items: center;
+    width: 400px;
+    margin: 0 auto;
+}
+
+.wrapper > .input > input{
+    outline: none;
+    border: none;
+    padding: 5px;
+    height: 25px;
+    width: 300px;
+    border-radius: 4px 0px 0px 4px;
+}
+
+.wrapper > .input > input:focus{
+    outline: solid 1px blue;
+}
+
+.wrapper > .input > button{
+    height: 36px;
+    background-color: #0a7f8f;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    padding: 5px;
+    border-radius: 0px 4px 4px 0px;
+}
+
+button{
+    height: 36px;
+    background-color: #0a7f8f;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.loader:empty {
+    position: absolute;
+    top: calc(50% - 4em);
+    left: calc(50% - 4em);
+    width: 3em;
+    height: 3em;
+    border: 1.1em solid rgba(0, 0, 0, 0.2);
+    border-left: 1.1em solid #000000;
+    border-radius: 50%;
+    animation: load8 1.1s infinite linear;
+  }
+  
+  @keyframes load8 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  #root .wrapper .weatherApp{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: auto;
+    place-items: start center;
+    gap: 10px;
+  }
+
+  #root .wrapper .cityLookedUp{
+    grid-row: 1;
+    grid-column: 1 / 6;
+    text-align: center;
+  }
+
+  #root .wrapper .weatherApp .sys{
+    grid-column: 3 / 4;
+  }
+
+  .lat, .lon{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .errorModal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    width: 400px;
+    height: 100px;
+    top: 50%;
+    /*credit to michealosman*/
+    left: 50%;
+    /*credit to michealosman*/
+    line-height: 14px;
+    border: 2px solid black;
+    padding: 15px;
+    border-radius: 6px;
+    gap: 10px;
+    background-color: rgba(0, 0, 0, 0.904);
+    transform: translate(-50%, -50%) scale(0);
+    /*credit to michealosman*/
+    color: white;
+    transition: 0.2s ease-in-out;
+    /*credit to michealosman*/
+    align-items: center;
+  }
+
+  .errorModal.active {
+    text-align: center;
+    transform: translate(-50%, -50%) scale(1);
+    /*credit to michealosman*/
+  }
